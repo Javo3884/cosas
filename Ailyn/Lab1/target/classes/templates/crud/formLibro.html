@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LibroFormulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <form th:action="@{/libro/grabar}" th:object=${libro} method="POST">
+            <div class="card">
+                <div class="card-header"></div>
+                <h3>libro</h3>
+                <div class="card-body"></div>
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input th:field="*{id}" type="text" class="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>titulo</label>
+                        <input th:field="*{titulo}" type="text" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>autor</label>
+                        <input th:field="*{autor}" type="text" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>editorial</label>
+                        <input th:field="*{editorial}" type="text" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>genero</label>
+                        <input th:field="*{genero}" type="text" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ejemplar</label>
+                        <input th:field="*{ejemplar}" type="text" class="form-control"/>
+                    </div>
+                    
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

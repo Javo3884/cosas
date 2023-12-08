@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenedor libro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <a th:href="@{nuevo}" class="btn btn-primary">Nuevo</a>
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>titulo</th>
+                <th>autor</th>
+                <th>editorial</th>
+                <th>genero</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="libro:${libros}">
+                <td th:text="${libro.id}">${libro.id}</td>
+                <td th:text="${libro.titulo}">${libro.titulo}</td>
+                <td th:text="${libro.autor}">${libro.autor}</td>
+                <td th:text="${libro.editorial}">${libro.editorial}</td>
+                <td th:text="${libro.genero}">${libro.genero}</td>
+                <td>
+                    <a class="btn btn-warning" th:href="@{editar/}+${libro.id}" >Editar</a>
+                    <a class="btn btn-danger"  th:onclick="fxJSeliminar([[${libro.id}]])">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/fxJSfunciones2.js"></script>
+</body>
+</html>

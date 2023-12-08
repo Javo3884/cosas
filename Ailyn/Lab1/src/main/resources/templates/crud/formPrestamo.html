@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <form th:action="@{/prestamo/grabar}" th:object=${prestamo} method="POST">
+            <div class="card">
+                <div class="card-header"></div>
+                <h3>Persona</h3>
+                <div class="card-body"></div>
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input th:field="*{id}" type="text" class="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>fecha_prestamo</label>
+                        <input th:field="*{fecha_prestamo}" type="text" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>fecha_vencimiento</label>
+                        <input th:field="*{fecha_vencimiento}" type="text" class="form-control"/>
+                    </div>
+                    
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
